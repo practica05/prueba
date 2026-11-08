@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f47721">
+    <title>EPA | Plataforma de Estudio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <div class="brand-icon">EPA</div>
+        <div>
+            <h1>EPA Academy</h1>
+            <span>PLATAFORMA DE APRENDIZAJE</span>
+        </div>
+    </div>
+    <button id="soundToggle" class="sound-btn" title="Activar o desactivar sonidos">
+        🔊 Sonido
+    </button>
+</header>
+
+<main class="container">
+
+    <section id="welcomeScreen" class="welcome-screen">
+        <div class="welcome-icon">📚</div>
+        <span class="eyebrow">BIENVENIDO A TU ESPACIO DE APRENDIZAJE</span>
+        <h2>¡Prepárate para<br><span>aprender y destacar!</span></h2>
+        <p>Practica tus conocimientos sobre EPA, repasa los conceptos y prepárate para tu evaluación.</p>
+
+        <div class="stats-preview">
+            <div><strong id="totalQuestions">46</strong><small>Preguntas</small></div>
+            <div><strong>2</strong><small>Modalidades</small></div>
+            <div><strong>100%</strong><small>Interactivo</small></div>
+        </div>
+
+        <h3>Selecciona tu modalidad</h3>
+
+        <div class="mode-cards">
+            <button class="mode-card" id="studyMode">
+                <span class="mode-icon">📖</span>
+                <strong>Modo estudio</strong>
+                <small>Aprende a tu ritmo y recibe correcciones inmediatas.</small>
+                <span class="mode-link">Comenzar a estudiar →</span>
+            </button>
+
+            <button class="mode-card" id="examMode">
+                <span class="mode-icon">📝</span>
+                <strong>Modo examen</strong>
+                <small>Demuestra lo que sabes y descubre tu calificación.</small>
+                <span class="mode-link">Comenzar examen →</span>
+            </button>
+        </div>
+    </section>
+
+    <section id="quizScreen" class="quiz-screen hidden">
+        <div class="quiz-header">
+            <div>
+                <span class="eyebrow" id="modeLabel">MODO ESTUDIO</span>
+                <h2>Evaluación EPA</h2>
+            </div>
+            <div class="timer-box">
+                <span>⏱️ TIEMPO</span>
+                <strong id="timer">00:00</strong>
+            </div>
+        </div>
+
+        <div class="progress-info">
+            <span id="questionCounter">Pregunta 1 de 46</span>
+            <span id="scoreDisplay">Aciertos: 0</span>
+        </div>
+
+        <div class="progress-track">
+            <div id="progressBar"></div>
+        </div>
+
+        <div class="question-card" id="questionCard">
+            <div class="question-top">
+                <span id="questionNumber" class="question-number">PREGUNTA 01</span>
+                <span id="categoryLabel" class="category-label">CONOCIMIENTOS EPA</span>
+            </div>
+
+            <h3 id="questionText">Pregunta</h3>
+            <p class="instruction">Selecciona la respuesta correcta:</p>
+
+            <div id="answersContainer" class="answers-container"></div>
+
+            <div id="feedback" class="feedback hidden"></div>
+
+            <div class="quiz-actions">
+                <button id="prevBtn" class="secondary-btn">← Anterior</button>
+                <button id="nextBtn" class="primary-btn" disabled>Siguiente →</button>
+            </div>
+        </div>
+
+        <div class="quiz-footer">
+            <button id="quitBtn" class="quit-btn">✕ Salir del cuestionario</button>
+            <span>EPA Academy · Aprende practicando</span>
+        </div>
+    </section>
+
+    <section id="resultScreen" class="result-screen hidden">
+        <div class="result-icon" id="resultIcon">🏆</div>
+        <span class="eyebrow">EVALUACIÓN COMPLETADA</span>
+        <h2 id="resultTitle">¡Excelente trabajo!</h2>
+        <p id="resultMessage">Estos son tus resultados.</p>
+
+        <div class="score-circle" id="scoreCircle">
+            <strong id="finalPercentage">0%</strong>
+            <small>CALIFICACIÓN</small>
+        </div>
+
+        <div class="result-stats">
+            <div>
+                <strong id="correctCount">0</strong>
+                <span>Correctas</span>
+            </div>
+            <div>
+                <strong id="wrongCount">0</strong>
+                <span>Incorrectas</span>
+            </div>
+            <div>
+                <strong id="finalTime">00:00</strong>
+                <span>Tiempo</span>
+            </div>
+        </div>
+
+        <div class="review-section">
+            <h3>📋 Revisión de respuestas</h3>
+            <div id="reviewList"></div>
+        </div>
+
+        <div class="result-actions">
+            <button id="retryBtn" class="primary-btn">↻ Intentar nuevamente</button>
+            <button id="homeBtn" class="secondary-btn">Volver al inicio</button>
+        </div>
+    </section>
+
+</main>
+
+<div id="toast" class="toast hidden"></div>
+
+<footer>
+    <p>EPA Academy © 2026 · Tu esfuerzo construye tu conocimiento.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
