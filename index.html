@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>EPA Academia | Plataforma de estudio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="EPA Academia inicio">
+      <span class="brand-mark">EPA</span><span class="brand-copy"><strong>ACADEMIA</strong><small>APRENDE · PRACTICA · AVANZA</small></span>
+    </a>
+    <div class="top-actions">
+      <span class="status-dot"></span><span class="top-label">Tu espacio de aprendizaje</span>
+      <button class="icon-btn" id="soundToggle" aria-label="Activar o desactivar sonidos" title="Sonido"><span id="soundIcon">♫</span></button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> PREPÁRATE CON CONFIANZA</div>
+        <h1>Tu aprendizaje,<br><span>a otro nivel.</span></h1>
+        <p>Repasa el material de capacitación EPA a tu ritmo o pon a prueba tus conocimientos en modo examen.</p>
+        <div class="hero-tags"><span>✦ 45+ preguntas</span><span>◷ Cronómetro</span><span>♫ Audio y animaciones</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="hero-card"><div class="hero-card-top"><span>EPA</span><span class="spark">✦</span></div><div class="hero-emblem">✹</div><div class="hero-card-bottom">APRENDE A TU RITMO</div></div>
+        <div class="float-chip chip-one">✓ Respuestas al instante</div><div class="float-chip chip-two">★ Sigue avanzando</div>
+      </div>
+    </section>
+
+    <section class="dashboard" id="dashboard">
+      <div class="section-heading"><div><span class="eyebrow">PANEL DE ESTUDIO</span><h2>¿Cómo quieres practicar?</h2></div><span class="question-count" id="totalBadge">Banco de preguntas</span></div>
+      <div class="mode-grid">
+        <button class="mode-card active" data-mode="study" id="studyMode">
+          <span class="mode-icon study-icon">✎</span><span class="mode-text"><strong>Modo estudio</strong><small>Aprende con retroalimentación inmediata después de cada respuesta.</small></span><span class="mode-arrow">↗</span>
+        </button>
+        <button class="mode-card" data-mode="exam" id="examMode">
+          <span class="mode-icon exam-icon">◷</span><span class="mode-text"><strong>Modo examen</strong><small>Responde sin pistas y conoce tu resultado al finalizar.</small></span><span class="mode-arrow">↗</span>
+        </button>
+      </div>
+
+      <div class="setup-panel">
+        <div class="setup-title"><div><span class="eyebrow">CONFIGURA TU SESIÓN</span><h3>Personaliza tu práctica</h3></div><span class="setup-icon">⚙</span></div>
+        <div class="setup-controls">
+          <label class="field"><span>Número de preguntas</span><select id="questionLimit"><option value="10">10 preguntas</option><option value="15">15 preguntas</option><option value="20">20 preguntas</option><option value="all">Todas las preguntas</option></select></label>
+          <label class="field"><span>Orden</span><select id="questionOrder"><option value="random">Aleatorio</option><option value="original">Orden del material</option></select></label>
+          <label class="field" id="timerField"><span>Tiempo de examen</span><select id="examMinutes"><option value="10">10 minutos</option><option value="15" selected>15 minutos</option><option value="20">20 minutos</option><option value="30">30 minutos</option></select></label>
+        </div>
+        <div class="setup-footer"><div class="feature-note"><span>●</span> Tus avances se calculan al terminar la sesión.</div><button class="primary-btn" id="startBtn">Comenzar práctica <span>→</span></button></div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card"><span class="stat-icon">▤</span><div><strong id="statQuestions">0</strong><small>Preguntas en esta sesión</small></div></div>
+        <div class="stat-card"><span class="stat-icon green">✓</span><div><strong id="statCorrect">0</strong><small>Respuestas correctas</small></div></div>
+        <div class="stat-card"><span class="stat-icon amber">◷</span><div><strong id="statTime">00:00</strong><small>Tiempo transcurrido</small></div></div>
+      </div>
+    </section>
+
+    <section class="quiz-panel hidden" id="quizPanel">
+      <div class="quiz-topline"><button class="back-btn" id="exitBtn">← Salir</button><div class="quiz-mode-label" id="quizModeLabel">MODO ESTUDIO</div><div class="timer-pill" id="timerPill">◷ <span id="timerText">00:00</span></div></div>
+      <div class="progress-meta"><span id="progressText">Pregunta 1 de 10</span><span id="progressPercent">0%</span></div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="question-card">
+        <div class="question-kicker"><span id="questionNumber">PREGUNTA 01</span><span class="question-dot">●</span><span id="questionCategory">CAPACITACIÓN EPA</span></div>
+        <h2 id="questionText">Pregunta</h2>
+        <div class="answer-list" id="answerList"></div>
+        <div class="feedback hidden" id="feedback" aria-live="polite"></div>
+        <div class="quiz-footer"><span class="keyboard-hint">Selecciona la respuesta que consideres correcta.</span><button class="primary-btn" id="nextBtn" disabled>Siguiente <span>→</span></button></div>
+      </div>
+    </section>
+
+    <section class="result-panel hidden" id="resultPanel">
+      <div class="result-icon" id="resultIcon">🏆</div><span class="eyebrow">SESIÓN COMPLETADA</span><h2 id="resultTitle">¡Buen trabajo!</h2><p id="resultMessage">Has terminado tu práctica.</p>
+      <div class="score-ring" id="scoreRing"><div><strong id="scoreValue">0%</strong><small>ACIERTO</small></div></div>
+      <div class="result-stats"><div><strong id="resultCorrect">0</strong><small>Correctas</small></div><div><strong id="resultWrong">0</strong><small>Incorrectas</small></div><div><strong id="resultTime">00:00</strong><small>Tiempo</small></div></div>
+      <div class="review-box"><div class="review-heading"><h3>Repaso de respuestas</h3><span id="reviewCount"></span></div><div id="reviewList"></div></div>
+      <div class="result-actions"><button class="secondary-btn" id="homeBtn">Volver al inicio</button><button class="primary-btn" id="retryBtn">Practicar de nuevo <span>↻</span></button></div>
+    </section>
+
+    <footer class="footer"><span>EPA ACADEMIA</span><span>Un paso a la vez. ¡Tú puedes!</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
