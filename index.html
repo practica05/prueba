@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPA Academia | Estudio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">EPA</div>
+        <div>
+          <h1>EPA <span>Academia</span></h1>
+          <small>Plataforma de aprendizaje</small>
+        </div>
+      </div>
+      <button id="soundToggle" class="icon-button" title="Sonido">🔊</button>
+    </header>
+
+    <main>
+      <section id="home" class="screen active">
+        <div class="hero">
+          <div class="hero-tag">PREPÁRATE · APRENDE · SUPERA</div>
+          <h2>¡Prepárate para<br><span>dominar EPA!</span></h2>
+          <p>Practica tus conocimientos con preguntas interactivas, retos y simulaciones de examen.</p>
+          <div class="stats">
+            <div><strong id="totalQuestions">0</strong><small>Preguntas</small></div>
+            <div><strong>2</strong><small>Modos</small></div>
+            <div><strong>∞</strong><small>Prácticas</small></div>
+          </div>
+        </div>
+
+        <div class="mode-grid">
+          <button class="mode-card study" onclick="startStudy()">
+            <div class="mode-icon">📚</div>
+            <h3>Modo estudio</h3>
+            <p>Aprende pregunta por pregunta. Recibe correcciones instantáneas.</p>
+            <span class="start-label">Comenzar estudio →</span>
+          </button>
+
+          <button class="mode-card exam" onclick="startExam()">
+            <div class="mode-icon">🎯</div>
+            <h3>Modo examen</h3>
+            <p>Responde sin ayuda y descubre tu puntuación al finalizar.</p>
+            <span class="start-label">Iniciar examen →</span>
+          </button>
+        </div>
+
+        <div class="home-info">
+          <div class="info-icon">💡</div>
+          <div>
+            <strong>Consejo</strong>
+            <p>Practica en modo estudio primero. Cuando te sientas preparada, prueba el modo examen.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="quiz" class="screen">
+        <div class="quiz-header">
+          <button class="back-button" onclick="goHome()">← Salir</button>
+          <div class="timer" id="timer">00:00</div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-label">
+            <span id="questionNumber">Pregunta 1</span>
+            <span id="progressText">0%</span>
+          </div>
+          <div class="progress-bar"><div id="progress"></div></div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="question-category" id="modeLabel">MODO ESTUDIO</div>
+          <h2 id="questionText"></h2>
+          <div id="options" class="options"></div>
+          <div id="feedback" class="feedback"></div>
+        </div>
+
+        <div class="quiz-bottom">
+          <div class="score-mini">
+            <span>✔</span> <span id="correctCount">0</span>
+            <span class="wrong-icon">✖</span> <span id="wrongCount">0</span>
+          </div>
+          <button id="nextBtn" class="next-button" onclick="nextQuestion()" disabled>
+            Siguiente →
+          </button>
+        </div>
+      </section>
+
+      <section id="results" class="screen">
+        <div class="result-card">
+          <div class="result-icon" id="resultIcon">🏆</div>
+          <div class="hero-tag">RESULTADOS</div>
+          <h2 id="resultTitle">¡Terminaste!</h2>
+          <p id="resultMessage"></p>
+
+          <div class="score-circle" id="scoreCircle">
+            <div>
+              <strong id="scorePercent">0%</strong>
+              <small>Resultado</small>
+            </div>
+          </div>
+
+          <div class="result-stats">
+            <div><strong id="finalCorrect">0</strong><small>Correctas</small></div>
+            <div><strong id="finalWrong">0</strong><small>Incorrectas</small></div>
+            <div><strong id="finalTime">00:00</strong><small>Tiempo</small></div>
+          </div>
+
+          <div class="result-actions">
+            <button class="primary-button" onclick="reviewMistakes()">🔎 Revisar errores</button>
+            <button class="secondary-button" onclick="restartQuiz()">🔄 Repetir</button>
+            <button class="secondary-button" onclick="goHome()">🏠 Inicio</button>
+          </div>
+        </div>
+
+        <div id="mistakesList" class="mistakes-list"></div>
+      </section>
+    </main>
+
+    <footer>EPA ACADEMIA · Plataforma de práctica</footer>
+  </div>
+
+  <div id="flash" class="flash"></div>
+  <script src="script.js"></script>
+</body>
+</html>
