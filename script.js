@@ -81,8 +81,8 @@ const QUESTIONS = [
   },
   {
     "q": "¿Cuál es la misión de EPA?",
-    "a": "Ofrecer la mejor opción a nuestros clientes en surtido, precio y servicio en el mercado de la construcción, remodelación y decoración del hogar.",
-    "o": ["Ofrecer la mejor opción a nuestros clientes en surtido, precio y servicio en el mercado de la construcción, remodelación y decoración del hogar.", "Ofrecer la mejor opción a nuestros clientes en calidad, variedad y atención en el mercado de la construcción, decoración y remodelación del hogar.", "Ser la mejor opción para nuestros colaboradores, proveedores y comunidades en el mercado de la construcción y remodelación.", "Ofrecer a nuestros clientes el mejor surtido, precio y servicio en el mercado de la ferretería, electricidad y plomería."]
+    "a": "Ofrecer la mejor opción a nuestros clientes en surtido, precio y servicio en el mercado de la construcción, decoración y remodelación del hogar.",
+    "o": ["Ofrecer la mejor opción a nuestros clientes en surtido, precio y servicio en el mercado de la construcción, decoración y remodelación del hogar.", "Ofrecer la mejor opción a nuestros clientes en calidad, variedad y atención en el mercado de la construcción, decoración y remodelación del hogar.", "Ser la mejor opción para nuestros colaboradores, proveedores y comunidades en el mercado de la construcción y remodelación.", "Ofrecer a nuestros clientes el mejor surtido, precio y servicio en el mercado de la ferretería, electricidad y plomería."]
   },
   {
     "q": "¿Cuál es la visión de EPA?",
@@ -123,7 +123,7 @@ const QUESTIONS = [
   {
     "q": "¿Qué información identifica el anaquel de precio oferta u oportunidad?",
     "a": "Precio anterior; fecha de inicio y finalización de la oferta; rótulo con fondo amarillo, franja azul y leyenda respectiva.",
-    "o": ["Precio anterior; fecha de inicio y finalización de la oferta; rótulo con fondo amarillo, franja azul y leyenda respectiva.", "Precio anterior; leyenda «Hasta agotar existencia»; rótulo amarillo y blanco.", "Incluye IVA, código EPA y precio en dólares.", "Únicamente muestra el precio actual."]
+    "o": ["Precio anterior; fecha de inicio y finalización de la oferta; rótulo con fondo amarillo, franja azul y leyend respectiva.", "Pecio anterior; leyenda «Hasta agotar existencia»; rótulo amarillo y blanco.", "Incluye IVA, código EPA y precio en dólares.", "Únicamente muestra el precio actual."]
   },
   {
     "q": "¿Qué características tiene el anaquel de precio liquidación?",
