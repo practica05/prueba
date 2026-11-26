@@ -123,7 +123,7 @@ const QUESTIONS = [
   {
     "q": "¿Qué información identifica el anaquel de precio oferta u oportunidad?",
     "a": "Precio anterior; fecha de inicio y finalización de la oferta; rótulo con fondo amarillo, franja azul y leyenda respectiva.",
-    "o": ["Precio anterior; fecha de inicio y finalización de la oferta; rótulo con fondo amarillo, franja azul y leyend respectiva.", "Pecio anterior; leyenda «Hasta agotar existencia»; rótulo amarillo y blanco.", "Incluye IVA, código EPA y precio en dólares.", "Únicamente muestra el precio actual."]
+    "o": ["Precio anterior; fecha de inicio y finalización de la oferta; rótulo con fondo amarillo, franja azul y leyenda respectiva.", "Pecio anterior; leyenda «Hasta agotar existencia»; rótulo amarillo y blanco.", "Incluye IVA, código EPA y precio en dólares.", "Únicamente muestra el precio actual."]
   },
   {
     "q": "¿Qué características tiene el anaquel de precio liquidación?",
